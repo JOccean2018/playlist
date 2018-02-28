@@ -17,7 +17,7 @@
 
 // Songs
 var mySong = {
-	"title":"24K Magic",
+	"title":"24K Magic", 
 	"artist":"Bruno Mars",
 	"mp3-url":"https://open.spotify.com/track/6b8Be6ljOzmkOmFslEb23P",
 	"image-url":"https://images-na.ssl-images-amazon.com/images/I/71Gr9aCHQfL._SY355_.jpg",
@@ -49,16 +49,21 @@ var myPlayList = [
 
 // DOCUMENT READY FUNCTION
 $( document ).ready(function() {
-  
 
+var songName = myPlayList[0].title;
+var artist = myPlayList[0].artist;
+var url = myPlayList[0]["mp3-url"];
+var img = myPlayList[0]["image-url"];
 
+displayList(songName, artist, url, img);
 
 });
 
-function displayList(){
-
-
-  
+function displayList(name, artist, url, img) {
+	$("#songs").append("<h1>"+name+"</h1>")
+	$("#songs").append("<p>"+artist+"</p>")
+	$("#songs").append("<script>"+url+"</script>")
+	$("#songs").append("<img>"+img+"</img>")
 }
 
 function clearList(){
